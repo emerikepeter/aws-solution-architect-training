@@ -1,0 +1,14 @@
+# Optional: use a specific base image
+image: gitpod/workspace-full
+
+# Tasks that run when the workspace starts
+tasks:
+  - name: Install & Build
+    init: npm install          # runs during prebuild / first start
+    command: npm run dev       # runs every time the workspace starts
+
+# Ports to expose
+ports:
+  - port: 3000
+    onOpen: open-preview
+    name: App
